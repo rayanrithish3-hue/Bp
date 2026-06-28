@@ -1,0 +1,349 @@
+/* ===========================
+   PROJECT BP OS
+   STYLE.CSS
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+    background:#000;
+}
+
+/* Wallpaper */
+
+body{
+
+    background-image:url("../assets/wallpapers/desktop.webp");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+}
+
+
+/* ===========================
+BOOT SCREEN
+=========================== */
+
+#bootScreen{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#05070f;
+
+    z-index:9999;
+
+}
+
+.bootLogo{
+
+    width:420px;
+
+    max-width:90%;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.bootLogo h1{
+
+    font-size:42px;
+
+    margin-bottom:12px;
+
+    font-weight:700;
+
+}
+
+.bootLogo p{
+
+    opacity:.8;
+
+    margin-bottom:30px;
+
+}
+
+.progressBar{
+
+    width:100%;
+
+    height:8px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.15);
+
+    overflow:hidden;
+
+}
+
+.progressFill{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:30px;
+
+    background:#ffffff;
+
+    animation:bootLoading 4s linear forwards;
+
+}
+
+#bootText{
+
+    display:block;
+
+    margin-top:18px;
+
+    opacity:.8;
+
+}
+
+
+/* ===========================
+MAIN OS
+=========================== */
+
+#osContainer{
+
+    display:none;
+
+    width:100%;
+
+    height:100%;
+
+    backdrop-filter:blur(10px);
+
+}
+
+
+/* ===========================
+TOP BAR
+=========================== */
+
+.topBar{
+
+    width:100%;
+
+    height:60px;
+
+    padding:0 20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(0,0,0,.35);
+
+    backdrop-filter:blur(25px);
+
+    color:white;
+
+}
+
+.leftTop{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.smallIcon{
+
+    width:20px;
+
+    height:20px;
+
+}
+
+
+/* ===========================
+DESKTOP
+=========================== */
+
+.desktop{
+
+    height:calc(100% - 120px);
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+
+    gap:30px;
+
+    padding:40px;
+
+}
+
+.appIcon{
+
+    width:100px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+.appIcon:hover{
+
+    transform:translateY(-8px) scale(1.05);
+
+}
+
+.appIcon img{
+
+    width:64px;
+
+    height:64px;
+
+}
+
+.appIcon p{
+
+    color:white;
+
+    margin-top:10px;
+
+    font-size:15px;
+
+}
+
+
+/* ===========================
+TASKBAR
+=========================== */
+
+.taskBar{
+
+    height:60px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 20px;
+
+    background:rgba(0,0,0,.35);
+
+    backdrop-filter:blur(25px);
+
+    color:white;
+
+}
+
+.taskLeft,
+.taskCenter,
+.taskRight{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.taskBar img{
+
+    width:22px;
+
+}
+
+
+/* ===========================
+MOBILE
+=========================== */
+
+@media(max-width:768px){
+
+body{
+
+background-image:url("../assets/wallpapers/mobile.webp");
+
+}
+
+.desktop{
+
+grid-template-columns:repeat(3,1fr);
+
+gap:20px;
+
+padding:25px;
+
+}
+
+.appIcon{
+
+width:100%;
+
+}
+
+.appIcon img{
+
+width:56px;
+
+height:56px;
+
+}
+
+.bootLogo h1{
+
+font-size:32px;
+
+}
+
+}
+
+
+/* ===========================
+ANIMATIONS
+=========================== */
+
+@keyframes bootLoading{
+
+0%{
+
+width:0%;
+
+}
+
+100%{
+
+width:100%;
+
+}
+
+}
